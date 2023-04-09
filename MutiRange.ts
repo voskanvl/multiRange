@@ -95,7 +95,7 @@ export default class MultyRange {
         const styleEl = document.createElement("style");
         styleEl.append(style(this.options));
         if (applyDefaultStyle) this.root.append(styleEl);
-        this.root.append(this.createBasicSchema());
+        this.root.append(this.render());
     }
 
     private createDiv(className: string, optionName: keyof OptionsType): HTMLDivElement {
@@ -112,7 +112,7 @@ export default class MultyRange {
         el.min = "0";
         return el;
     }
-    private createBasicSchema(): HTMLElement {
+    private render(): HTMLElement {
         this.container = this.createDiv(
             this.options.containerClass || InitialOptions.containerClass,
             "containerClass",
